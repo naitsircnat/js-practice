@@ -17,12 +17,9 @@ console.log(checkPrime(9));
 
 /*
 write a program to find the largest prime factor of a given number?
-- divide number by numbers smaller than itself but >1 to see if got remainder;
-- if yes, check if it's a prime number
-
-if inner loop can be completed, return i. Else, break the loop and go back to the outer loop
 */
 
+// USING ONE FUNCTION WITH A HELPER FUNCTION
 // function getLargestPrimeFactor(num) {
 //   for (let i = num; i > 1; i--) {
 //     if (num % i == 0) {
@@ -33,6 +30,19 @@ if inner loop can be completed, return i. Else, break the loop and go back to th
 //   }
 // }
 
+// function checkIfPrimeNumber(num) {
+//   let isPrimeNumber = true;
+
+//   for (let i = 2; i < num; i++) {
+//     if (num % i == 0) {
+//       isPrimeNumber = false;
+//     }
+//   }
+
+//   return isPrimeNumber;
+// }
+
+// USING ONE BIG FUNCTION ONLY
 // function getLargestPrimeFactor(num) {
 //   let isPrimeNumber = true;
 
@@ -52,14 +62,33 @@ if inner loop can be completed, return i. Else, break the loop and go back to th
 //   }
 // }
 
-// function checkIfPrimeNumber(num) {
-//   let isPrimeNumber = true;
+function checkIfPalindrome(word) {
+  let start = 0;
+  let end = word.length - 1;
+  let isPalindrome = true;
 
-//   for (let i = 2; i < num; i++) {
-//     if (num % i == 0) {
-//       isPrimeNumber = false;
-//     }
-//   }
+  while (start <= end) {
+    let startChar = word.charAt(start);
+    let endChar = word.charAt(end);
 
-//   return isPrimeNumber;
-// }
+    if (startChar != endChar) {
+      isPalindrome = false;
+    }
+
+    start++;
+    end--;
+  }
+
+  return isPalindrome;
+}
+
+console.log(checkIfPalindrome("racecar")); // true (Palindrome)
+console.log(checkIfPalindrome("madam")); // true (Palindrome)
+console.log(checkIfPalindrome("hello")); // false (Not a palindrome)
+console.log(checkIfPalindrome("amanaplanacanalpanama")); // true (Palindrome)
+console.log(checkIfPalindrome("noxinnixon")); // true (Palindrome)
+console.log(checkIfPalindrome("wasitacaroracatisaw")); // true (Palindrome)
+console.log(checkIfPalindrome("12321")); // true (Numeric palindrome)
+console.log(checkIfPalindrome("12345")); // false (Not a palindrome)
+console.log(checkIfPalindrome("")); // true (Empty string is a palindrome)
+console.log(checkIfPalindrome("a")); // true (Single character is always a palindrome)
