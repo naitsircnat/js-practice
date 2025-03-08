@@ -86,20 +86,23 @@ write a program to find the largest prime factor of a given number?
 Create a pyramid of "yes"
 */
 
-function createPyramid(size) {
-  let output = "";
+// function createPyramid(size) {
+//   let output = "";
 
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j <= i; j++) {
-      output += "yes ";
-    }
-    console.log(output);
-    output = "";
-  }
-}
+//   for (let i = 0; i < size; i++) {
+//     for (let j = 0; j <= i; j++) {
+//       output += "yes ";
+//     }
+//     console.log(output);
+//     output = "";
+//   }
+// }
 
-/*
-how do i make row two have one more;
-*/
+// createPyramid(10);
 
-createPyramid(10);
+let arr = [];
+
+arr[4] = 7;
+arr[16] = 17;
+
+console.log(arr[1]);
