@@ -62,33 +62,44 @@ write a program to find the largest prime factor of a given number?
 //   }
 // }
 
-function checkIfPalindrome(word) {
-  let start = 0;
-  let end = word.length - 1;
-  let isPalindrome = true;
+// function checkIfPalindrome(word) {
+//   let start = 0;
+//   let end = word.length - 1;
+//   let isPalindrome = true;
 
-  while (start <= end) {
-    let startChar = word.charAt(start);
-    let endChar = word.charAt(end);
+//   while (start <= end) {
+//     let startChar = word.charAt(start);
+//     let endChar = word.charAt(end);
 
-    if (startChar != endChar) {
-      isPalindrome = false;
+//     if (startChar != endChar) {
+//       isPalindrome = false;
+//     }
+
+//     start++;
+//     end--;
+//   }
+
+//   return isPalindrome;
+// }
+
+/*
+Create a pyramid of "yes"
+*/
+
+function createPyramid(size) {
+  let output = "";
+
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j <= i; j++) {
+      output += "yes ";
     }
-
-    start++;
-    end--;
+    console.log(output);
+    output = "";
   }
-
-  return isPalindrome;
 }
 
-console.log(checkIfPalindrome("racecar")); // true (Palindrome)
-console.log(checkIfPalindrome("madam")); // true (Palindrome)
-console.log(checkIfPalindrome("hello")); // false (Not a palindrome)
-console.log(checkIfPalindrome("amanaplanacanalpanama")); // true (Palindrome)
-console.log(checkIfPalindrome("noxinnixon")); // true (Palindrome)
-console.log(checkIfPalindrome("wasitacaroracatisaw")); // true (Palindrome)
-console.log(checkIfPalindrome("12321")); // true (Numeric palindrome)
-console.log(checkIfPalindrome("12345")); // false (Not a palindrome)
-console.log(checkIfPalindrome("")); // true (Empty string is a palindrome)
-console.log(checkIfPalindrome("a")); // true (Single character is always a palindrome)
+/*
+how do i make row two have one more;
+*/
+
+createPyramid(10);
